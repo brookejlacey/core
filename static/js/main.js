@@ -104,4 +104,26 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 0.5,
         ease: 'power2.out'
     });
+
+    // Animate tech overview icons
+    gsap.from('#tech-overview .fas', {
+        scrollTrigger: {
+            trigger: '#tech-overview',
+            start: 'top 80%'
+        },
+        scale: 0,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 0.5,
+        ease: 'back.out(1.7)'
+    });
+
+    // Animate hero section
+    gsap.from('#hero h1, #hero p, #hero a', {
+        opacity: 0,
+        y: 30,
+        stagger: 0.2,
+        duration: 0.8,
+        ease: 'power2.out'
+    });
 });
