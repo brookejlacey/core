@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CORE Platform</title>
+    <title>2G - CORE Platform</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
@@ -17,63 +17,140 @@
         gtag('js', new Date());
         gtag('config', '{{ ga_tracking_id }}');
     </script>
+    <style>
+        body {
+            background: #000000;
+            color: #FFFFFF;
+        }
+        .text-2g-red {
+            color: #FF5733;
+        }
+        .bg-2g-red {
+            background-color: #FF5733;
+        }
+        .revolutionary-underline {
+            text-decoration: underline;
+            text-decoration-color: #FF5733;
+            text-decoration-thickness: 4px;
+        }
+        .core-steps {
+            position: relative;
+        }
+        .curved-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 120px;
+            border: 2px solid #FF5733;
+            border-color: #FF5733 transparent transparent transparent;
+            border-radius: 50%/60px 60px 0 0;
+        }
+        .core-step {
+            background-color: #000000;
+            z-index: 1;
+            padding: 0 10px;
+        }
+        .content-x {
+            position: relative;
+            display: inline-block;
+        }
+        .content-x::after {
+            content: '\f00d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: -5px;
+            right: -20px;
+            color: #FF5733;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
-    <!-- Header and other sections remain unchanged -->
+<body class="font-sans">
+    <main class="container mx-auto px-6 py-8">
+        <header class="mb-12">
+            <h1 class="text-8xl font-bold text-white">2G</h1>
+        </header>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8">What Our Clients Say</h2>
-            <div class="relative">
-                <div id="testimonials-carousel" class="overflow-hidden">
-                    <div class="flex transition-transform duration-300 ease-in-out">
-                        <div class="w-full flex-shrink-0 px-4">
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <p class="text-gray-600 mb-4">"2G and their forward-thinking approach is invaluable to us."</p>
-                                <div class="flex items-center">
-                                    <img src="{{ url_for('static', filename='images/plutotv-logo.jpg') }}" alt="Pluto TV" class="w-16 h-16 object-contain mr-4">
-                                    <div>
-                                        <p class="font-semibold">Pluto TV</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full flex-shrink-0 px-4">
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <p class="text-gray-600 mb-4">"2G's commitment to market-tailored localization is outstanding."</p>
-                                <div class="flex items-center">
-                                    <img src="{{ url_for('static', filename='images/hulu-icon.png') }}" alt="Hulu" class="w-16 h-16 object-contain mr-4">
-                                    <div>
-                                        <p class="font-semibold">Hulu</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full flex-shrink-0 px-4">
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <p class="text-gray-600 mb-4">"2G has been our most dependable vendor for years."</p>
-                                <div class="flex items-center">
-                                    <img src="{{ url_for('static', filename='images/Sony_Pictures_Television_logo.jpg') }}" alt="Sony" class="w-16 h-16 object-contain mr-4">
-                                    <div>
-                                        <p class="font-semibold">Sony</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <section id="hero" class="mb-16">
+            <h2 class="text-6xl font-bold mb-4 text-2g-red">What is CORE?</h2>
+            <p class="text-2xl mb-8">A software platform that combines localization, transcription, storage, streaming and financial tracking into one integrated, self-service workflow.</p>
+            <h3 class="text-4xl font-bold">It's not just evolutionary, it's <span class="text-2g-red revolutionary-underline">revolutionary</span>. In 3 steps.</h3>
+        </section>
+
+        <section id="steps" class="mb-16">
+            <div class="mb-12">
+                <h3 class="text-6xl font-bold text-2g-red mb-2">01. Create it</h3>
+                <p class="text-2xl">Create your <span class="content-x">CONTENT</span></p>
+            </div>
+            
+            <div class="mb-12">
+                <h3 class="text-6xl font-bold text-2g-red mb-4">02. CORE it</h3>
+                <div class="flex flex-wrap justify-between items-center core-steps relative">
+                    <div class="curved-line"></div>
+                    <div class="text-center mb-4 core-step">
+                        <i class="fas fa-atom text-5xl mb-2 text-2g-red"></i>
+                        <p class="text-lg">Upload content into<br>CORE software</p>
+                    </div>
+                    <div class="text-center mb-4 core-step">
+                        <i class="fas fa-language text-5xl mb-2 text-2g-red"></i>
+                        <p class="text-lg">Select desired<br>LANGUAGES for<br>localization</p>
+                    </div>
+                    <div class="text-center mb-4 core-step">
+                        <i class="fas fa-file-alt text-5xl mb-2 text-2g-red"></i>
+                        <p class="text-lg">Select your<br>FORMATS</p>
+                    </div>
+                    <div class="text-center mb-4 core-step">
+                        <i class="fas fa-cube text-5xl mb-2 text-2g-red"></i>
+                        <p class="text-lg">Select your<br>PACKAGE<br>(Studio, UGC or Web 3)</p>
+                    </div>
+                    <div class="text-center mb-4 core-step">
+                        <i class="fas fa-file-invoice-dollar text-5xl mb-2 text-2g-red"></i>
+                        <p class="text-lg">Place your<br>ORDER</p>
+                    </div>
+                    <div class="text-center mb-4 core-step">
+                        <i class="fas fa-link text-5xl mb-2 text-2g-red"></i>
+                        <p class="text-lg">Access your<br>streaming-ready content<br>via BLOCKCHAIN storage</p>
                     </div>
                 </div>
-                <button id="prev-testimonial" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button id="next-testimonial" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
-        </div>
-    </section>
+            
+            <div>
+                <h3 class="text-6xl font-bold text-2g-red mb-2">03. Circulate it</h3>
+                <p class="text-2xl"><i class="fas fa-globe text-3xl mr-2 text-2g-red"></i>Tag and DISTRIBUTE your content via our platform across screens</p>
+            </div>
+        </section>
 
-    <!-- Footer and other sections remain unchanged -->
+        <section id="benefits" class="mb-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <i class="fas fa-piggy-bank text-5xl mb-2 text-2g-red"></i>
+                    <h4 class="text-2xl font-bold mb-2">Save Money</h4>
+                    <p class="text-lg">AI works for cents<br>on the dollar</p>
+                </div>
+                <div class="text-center">
+                    <i class="far fa-eye text-5xl mb-2 text-2g-red"></i>
+                    <h4 class="text-2xl font-bold mb-2">Transparency</h4>
+                    <p class="text-lg">Track where and when<br>your content is viewed</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-stopwatch text-5xl mb-2 text-2g-red"></i>
+                    <h4 class="text-2xl font-bold mb-2">Speed-to-Market</h4>
+                    <p class="text-lg">Turnaround times in<br>hours not days</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-chart-line text-5xl mb-2 text-2g-red"></i>
+                    <h4 class="text-2xl font-bold mb-2">Scale</h4>
+                    <p class="text-lg">Content can scale<br>exponentially overnight</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="text-center">
+            <h2 class="text-6xl font-bold mb-8 text-2g-red">JOIN THE BETA</h2>
+            <img src="{{ url_for('static', filename='qr.jpg') }}" alt="QR Code" class="mx-auto w-64 h-64">
+        </section>
+    </main>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
