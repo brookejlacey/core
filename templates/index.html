@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORE Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-blue-600">
+                    <img src="{{ url_for('static', filename='images/core-logo.svg') }}" alt="CORE Logo" class="h-8">
+                </a>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#tech-overview" class="text-gray-700 hover:text-blue-600">Tech Overview</a>
+                    <a href="#infographic" class="text-gray-700 hover:text-blue-600">Infographic</a>
+                    <a href="#value-props" class="text-gray-700 hover:text-blue-600">Value Propositions</a>
+                </div>
+                <button id="menu-toggle" class="md:hidden">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-6 py-4">
+            <a href="#tech-overview" class="block py-2 text-gray-700 hover:text-blue-600">Tech Overview</a>
+            <a href="#infographic" class="block py-2 text-gray-700 hover:text-blue-600">Infographic</a>
+            <a href="#value-props" class="block py-2 text-gray-700 hover:text-blue-600">Value Propositions</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4">Welcome to CORE Platform</h1>
+                <p class="text-xl md:text-2xl mb-8">Empowering your business with cutting-edge technology</p>
+                <button id="cta-button" class="bg-white text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-blue-100 transition duration-300">
+                    Get Started
+                </button>
+            </div>
+        </section>
+
+        <section id="tech-overview" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-8">Tech Overview</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <i class="fas fa-microchip text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Advanced AI</h3>
+                        <p class="text-gray-600">Cutting-edge artificial intelligence to power your decisions</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-lock text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Secure Infrastructure</h3>
+                        <p class="text-gray-600">State-of-the-art security measures to protect your data</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-chart-line text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Real-time Analytics</h3>
+                        <p class="text-gray-600">Instant insights to drive your business forward</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="infographic" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-8">How CORE Works</h2>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                    <div class="text-center">
+                        <div class="w-24 h-24 rounded-full bg-blue-600 flex items-center justify-center text-white text-3xl mb-4">1</div>
+                        <h3 class="text-xl font-semibold mb-2">Connect</h3>
+                        <p class="text-gray-600">Integrate your data sources</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-24 h-24 rounded-full bg-blue-600 flex items-center justify-center text-white text-3xl mb-4">2</div>
+                        <h3 class="text-xl font-semibold mb-2">Analyze</h3>
+                        <p class="text-gray-600">Process and interpret your data</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-24 h-24 rounded-full bg-blue-600 flex items-center justify-center text-white text-3xl mb-4">3</div>
+                        <h3 class="text-xl font-semibold mb-2">Act</h3>
+                        <p class="text-gray-600">Make informed decisions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="value-props" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-8">Why Choose CORE?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex items-start">
+                        <i class="fas fa-rocket text-2xl text-blue-600 mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Accelerate Growth</h3>
+                            <p class="text-gray-600">Leverage our platform to rapidly scale your business and stay ahead of the competition.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-cogs text-2xl text-blue-600 mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Streamline Operations</h3>
+                            <p class="text-gray-600">Optimize your processes and improve efficiency across your organization.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-lightbulb text-2xl text-blue-600 mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Unlock Insights</h3>
+                            <p class="text-gray-600">Gain valuable insights from your data to make better, data-driven decisions.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-shield-alt text-2xl text-blue-600 mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Enhanced Security</h3>
+                            <p class="text-gray-600">Protect your sensitive information with our robust security measures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 CORE Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="lead-gen-popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full">
+            <h2 class="text-2xl font-bold mb-4">Get Started with CORE</h2>
+            <form id="lead-gen-form">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label for="company" class="block text-gray-700 font-bold mb-2">Company</label>
+                    <input type="text" id="company" name="company" class="w-full px-3 py-2 border rounded-lg" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Submit
+                </button>
+            </form>
+            <button id="close-popup" class="mt-4 text-gray-600 hover:text-gray-800">Close</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
